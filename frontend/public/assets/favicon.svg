@@ -1,0 +1,5 @@
+# Favicon pentru Primăria Brașov - 32x32 SVG
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#004990"/>
+  <text x="16" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">P</text>
+</svg>

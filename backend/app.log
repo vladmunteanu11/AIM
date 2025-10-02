@@ -1,0 +1,177 @@
+2025-08-24 12:02:01,209 - app.main - INFO - main - lifespan - 🚀 Starting Primărie Digitală API...
+2025-08-24 12:02:41,495 - app.main - INFO - main - lifespan - 🚀 Starting Primărie Digitală API...
+2025-08-24 12:02:41,523 - app.main - INFO - main - lifespan - 📁 Upload directory created: /home/andrei/Documents/aim/aim/backend/uploads
+2025-08-24 12:02:41,524 - app.main - INFO - main - lifespan - ✅ API started successfully on production environment
+2025-08-24 12:02:50,783 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 400 - Time: 0.0002s - IP: 127.0.0.1
+2025-08-24 12:02:55,521 - app.main - INFO - main - log_requests - GET /docs - Status: 400 - Time: 0.0002s - IP: 127.0.0.1
+2025-08-24 12:03:00,422 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 400 - Time: 0.0002s - IP: 127.0.0.1
+2025-08-24 12:03:30,802 - app.main - INFO - main - lifespan - 🛑 Shutting down Primărie Digitală API...
+2025-08-24 12:03:30,806 - app.main - INFO - main - lifespan - ✅ Shutdown completed
+2025-08-24 12:03:32,041 - app.main - INFO - main - lifespan - 🚀 Starting Primărie Digitală API...
+2025-08-24 12:03:32,074 - app.main - INFO - main - lifespan - 📁 Upload directory created: /home/andrei/Documents/aim/aim/backend/uploads
+2025-08-24 12:03:32,074 - app.main - INFO - main - lifespan - ✅ API started successfully on production environment
+2025-08-24 12:03:35,315 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0459s - IP: 127.0.0.1
+2025-08-24 12:04:41,736 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:04:41,736 - app.main - INFO - main - log_requests - GET /openapi.json - Status: 404 - Time: 0.0009s - IP: 127.0.0.1
+2025-08-24 12:04:49,383 - app.main - ERROR - main - validation_exception_handler - Validation error: [{'type': 'missing', 'loc': ('query', 'q'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/missing'}]
+2025-08-24 12:04:49,383 - app.main - INFO - main - log_requests - GET /api/v1/ - Status: 422 - Time: 0.0013s - IP: 127.0.0.1
+2025-08-24 12:05:04,604 - app.main - INFO - main - log_requests - GET /api/v1/content/pages - Status: 200 - Time: 0.0169s - IP: 127.0.0.1
+2025-08-24 12:05:08,358 - app.main - INFO - main - log_requests - GET /api/v1/documents - Status: 307 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:08:58,967 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0382s - IP: 127.0.0.1
+2025-08-24 12:09:52,590 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0021s - IP: 127.0.0.1
+2025-08-24 12:10:13,885 - app.main - INFO - main - lifespan - 🛑 Shutting down Primărie Digitală API...
+2025-08-24 12:10:13,888 - app.main - INFO - main - lifespan - ✅ Shutdown completed
+2025-08-24 12:10:15,130 - app.main - INFO - main - lifespan - 🚀 Starting Primărie Digitală API...
+2025-08-24 12:10:15,165 - app.main - INFO - main - lifespan - 📁 Upload directory created: /home/andrei/Documents/aim/aim/backend/uploads
+2025-08-24 12:10:15,165 - app.main - INFO - main - lifespan - ✅ API started successfully on production environment
+2025-08-24 12:10:21,496 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0444s - IP: 127.0.0.1
+2025-08-24 12:10:27,840 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0035s - IP: 127.0.0.1
+2025-08-24 12:10:34,681 - app.main - ERROR - main - http_exception_handler - HTTP error 405: Method Not Allowed
+2025-08-24 12:10:34,682 - app.main - INFO - main - log_requests - HEAD /api/v1/municipality/config - Status: 405 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 12:11:16,883 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0026s - IP: 127.0.0.1
+2025-08-24 12:11:16,912 - app.main - INFO - main - log_requests - GET /api/v1/content/pages - Status: 200 - Time: 0.0167s - IP: 127.0.0.1
+2025-08-24 12:11:16,915 - app.main - INFO - main - log_requests - GET /api/v1/documents - Status: 307 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:11:23,500 - app.main - INFO - main - log_requests - GET /api/v1/documents - Status: 307 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:11:28,935 - app.main - INFO - main - log_requests - GET /api/v1/documents - Status: 307 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:12:11,831 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 12:12:11,832 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0008s - IP: 127.0.0.1
+2025-08-24 12:12:11,864 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0313s - IP: 127.0.0.1
+2025-08-24 12:12:11,870 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0354s - IP: 127.0.0.1
+2025-08-24 12:12:12,009 - app.main - INFO - main - log_requests - OPTIONS /api/v1/complaints/categories - Status: 200 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:12:12,011 - app.main - INFO - main - log_requests - OPTIONS /api/v1/complaints/categories - Status: 200 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:12:12,012 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:12:12,012 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0009s - IP: 127.0.0.1
+2025-08-24 12:12:12,013 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:12:12,014 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0014s - IP: 127.0.0.1
+2025-08-24 12:13:36,327 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0025s - IP: 127.0.0.1
+2025-08-24 12:13:36,342 - app.main - INFO - main - log_requests - GET /api/v1/content/pages - Status: 200 - Time: 0.0068s - IP: 127.0.0.1
+2025-08-24 12:13:36,346 - app.main - INFO - main - log_requests - GET /api/v1/documents - Status: 307 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:14:02,103 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:14:02,103 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0008s - IP: 127.0.0.1
+2025-08-24 12:14:02,104 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:14:02,104 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0008s - IP: 127.0.0.1
+2025-08-24 12:17:09,258 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0027s - IP: 127.0.0.1
+2025-08-24 12:17:09,294 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0328s - IP: 127.0.0.1
+2025-08-24 12:17:12,761 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:12,762 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0010s - IP: 127.0.0.1
+2025-08-24 12:17:12,762 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:12,762 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0006s - IP: 127.0.0.1
+2025-08-24 12:17:15,152 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:15,153 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:15,153 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0022s - IP: 127.0.0.1
+2025-08-24 12:17:15,154 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0017s - IP: 127.0.0.1
+2025-08-24 12:17:17,736 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:17,737 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0007s - IP: 127.0.0.1
+2025-08-24 12:17:17,738 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:17,738 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 12:17:20,958 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-types - Status: 200 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:17:20,958 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-types - Status: 200 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:17:20,958 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:20,959 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:17:20,959 - app.main - INFO - main - log_requests - GET /api/v1/form-types - Status: 404 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 12:17:20,959 - app.main - INFO - main - log_requests - GET /api/v1/form-types - Status: 404 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:22:49,885 - app.main - INFO - main - log_requests - OPTIONS /api/v1/complaints/categories - Status: 200 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:22:49,886 - app.main - INFO - main - log_requests - OPTIONS /api/v1/complaints/categories - Status: 200 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:22:49,887 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:22:49,888 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:22:49,888 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0009s - IP: 127.0.0.1
+2025-08-24 12:22:49,888 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0006s - IP: 127.0.0.1
+2025-08-24 12:22:58,117 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0003s - IP: 127.0.0.1
+2025-08-24 12:22:58,121 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0023s - IP: 127.0.0.1
+2025-08-24 12:22:58,162 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0436s - IP: 127.0.0.1
+2025-08-24 12:22:58,165 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0428s - IP: 127.0.0.1
+2025-08-24 12:23:00,736 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:23:00,736 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0006s - IP: 127.0.0.1
+2025-08-24 12:23:00,737 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:23:00,737 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 12:23:02,359 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0039s - IP: 127.0.0.1
+2025-08-24 12:23:02,360 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0034s - IP: 127.0.0.1
+2025-08-24 12:23:05,536 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0038s - IP: 127.0.0.1
+2025-08-24 12:23:05,536 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0030s - IP: 127.0.0.1
+2025-08-24 12:23:08,421 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0027s - IP: 127.0.0.1
+2025-08-24 12:23:08,422 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0025s - IP: 127.0.0.1
+2025-08-24 12:23:12,144 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0058s - IP: 127.0.0.1
+2025-08-24 12:23:12,144 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0048s - IP: 127.0.0.1
+2025-08-24 12:25:11,698 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:25:11,698 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:25:11,698 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0012s - IP: 127.0.0.1
+2025-08-24 12:25:11,699 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0007s - IP: 127.0.0.1
+2025-08-24 12:25:16,476 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:25:16,477 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 12:25:16,478 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0017s - IP: 127.0.0.1
+2025-08-24 12:25:16,478 - app.main - INFO - main - log_requests - GET /api/v1/complaints/categories - Status: 404 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 12:25:20,406 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0024s - IP: 127.0.0.1
+2025-08-24 12:25:20,406 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0035s - IP: 127.0.0.1
+2025-08-24 20:55:36,529 - app.main - INFO - main - lifespan - 🛑 Shutting down Primărie Digitală API...
+2025-08-24 20:55:36,537 - app.main - INFO - main - lifespan - ✅ Shutdown completed
+2025-08-24 20:55:38,475 - app.main - INFO - main - lifespan - 🚀 Starting Primărie Digitală API...
+2025-08-24 20:55:38,504 - app.main - INFO - main - lifespan - 📁 Upload directory created: /home/andrei/Documents/aim/aim/backend/uploads
+2025-08-24 20:55:38,505 - app.main - INFO - main - lifespan - ✅ API started successfully on production environment
+2025-08-24 20:55:38,509 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0014s - IP: 127.0.0.1
+2025-08-24 20:55:38,510 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0017s - IP: 127.0.0.1
+2025-08-24 20:55:38,511 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0017s - IP: 127.0.0.1
+2025-08-24 20:55:38,511 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0016s - IP: 127.0.0.1
+2025-08-24 20:55:38,511 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0013s - IP: 127.0.0.1
+2025-08-24 20:55:38,512 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,550 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0013s - IP: 127.0.0.1
+2025-08-24 20:55:38,551 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,553 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0026s - IP: 127.0.0.1
+2025-08-24 20:55:38,557 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0066s - IP: 127.0.0.1
+2025-08-24 20:55:38,558 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0498s - IP: 127.0.0.1
+2025-08-24 20:55:38,575 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0168s - IP: 127.0.0.1
+2025-08-24 20:55:38,651 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0564s - IP: 127.0.0.1
+2025-08-24 20:55:38,653 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.1023s - IP: 127.0.0.1
+2025-08-24 20:55:38,656 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.1031s - IP: 127.0.0.1
+2025-08-24 20:55:38,660 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.1010s - IP: 127.0.0.1
+2025-08-24 20:55:38,660 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0995s - IP: 127.0.0.1
+2025-08-24 20:55:38,662 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0079s - IP: 127.0.0.1
+2025-08-24 20:55:38,662 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0847s - IP: 127.0.0.1
+2025-08-24 20:55:38,663 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,666 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0015s - IP: 127.0.0.1
+2025-08-24 20:55:38,666 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0719s - IP: 127.0.0.1
+2025-08-24 20:55:38,668 - app.main - INFO - main - log_requests - OPTIONS /api/v1/municipality/config - Status: 200 - Time: 0.0013s - IP: 127.0.0.1
+2025-08-24 20:55:38,669 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0062s - IP: 127.0.0.1
+2025-08-24 20:55:38,671 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0062s - IP: 127.0.0.1
+2025-08-24 20:55:38,671 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0066s - IP: 127.0.0.1
+2025-08-24 20:55:38,673 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0067s - IP: 127.0.0.1
+2025-08-24 20:55:38,675 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0069s - IP: 127.0.0.1
+2025-08-24 20:55:38,676 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0049s - IP: 127.0.0.1
+2025-08-24 20:55:38,677 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0033s - IP: 127.0.0.1
+2025-08-24 20:55:38,844 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/appointments/stats - Status: 200 - Time: 0.0002s - IP: 127.0.0.1
+2025-08-24 20:55:38,846 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,846 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/appointments - Status: 200 - Time: 0.0007s - IP: 127.0.0.1
+2025-08-24 20:55:38,847 - app.main - INFO - main - log_requests - GET /api/v1/admin/appointments/stats - Status: 404 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,847 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/appointments/stats - Status: 200 - Time: 0.0007s - IP: 127.0.0.1
+2025-08-24 20:55:38,848 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/appointments - Status: 200 - Time: 0.0009s - IP: 127.0.0.1
+2025-08-24 20:55:38,849 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,849 - app.main - INFO - main - log_requests - GET /api/v1/admin/appointments - Status: 404 - Time: 0.0014s - IP: 127.0.0.1
+2025-08-24 20:55:38,850 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,851 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,851 - app.main - INFO - main - log_requests - GET /api/v1/admin/appointments - Status: 404 - Time: 0.0013s - IP: 127.0.0.1
+2025-08-24 20:55:38,852 - app.main - INFO - main - log_requests - GET /api/v1/admin/appointments/stats - Status: 404 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,865 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/complaints/stats - Status: 200 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 20:55:38,866 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/complaints - Status: 200 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 20:55:38,866 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/complaints/stats - Status: 200 - Time: 0.0001s - IP: 127.0.0.1
+2025-08-24 20:55:38,867 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,868 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,868 - app.main - INFO - main - log_requests - OPTIONS /api/v1/admin/complaints - Status: 200 - Time: 0.0016s - IP: 127.0.0.1
+2025-08-24 20:55:38,868 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,869 - app.main - INFO - main - log_requests - GET /api/v1/admin/complaints/stats - Status: 404 - Time: 0.0018s - IP: 127.0.0.1
+2025-08-24 20:55:38,869 - app.main - INFO - main - log_requests - GET /api/v1/admin/complaints - Status: 404 - Time: 0.0016s - IP: 127.0.0.1
+2025-08-24 20:55:38,869 - app.main - INFO - main - log_requests - GET /api/v1/admin/complaints/stats - Status: 404 - Time: 0.0010s - IP: 127.0.0.1
+2025-08-24 20:55:38,870 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-submissions - Status: 200 - Time: 0.0001s - IP: 127.0.0.1
+2025-08-24 20:55:38,870 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,870 - app.main - INFO - main - log_requests - GET /api/v1/admin/complaints - Status: 404 - Time: 0.0004s - IP: 127.0.0.1
+2025-08-24 20:55:38,873 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,873 - app.main - INFO - main - log_requests - GET /api/v1/form-submissions - Status: 404 - Time: 0.0006s - IP: 127.0.0.1
+2025-08-24 20:55:38,873 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-submissions/stats - Status: 200 - Time: 0.0005s - IP: 127.0.0.1
+2025-08-24 20:55:38,874 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-submissions - Status: 200 - Time: 0.0010s - IP: 127.0.0.1
+2025-08-24 20:55:38,874 - app.main - INFO - main - log_requests - OPTIONS /api/v1/form-submissions/stats - Status: 200 - Time: 0.0009s - IP: 127.0.0.1
+2025-08-24 20:55:38,875 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,875 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,876 - app.main - ERROR - main - http_exception_handler - HTTP error 404: Not Found
+2025-08-24 20:55:38,876 - app.main - INFO - main - log_requests - GET /api/v1/form-submissions/stats - Status: 404 - Time: 0.0011s - IP: 127.0.0.1
+2025-08-24 20:55:38,876 - app.main - INFO - main - log_requests - GET /api/v1/form-submissions - Status: 404 - Time: 0.0010s - IP: 127.0.0.1
+2025-08-24 20:55:38,876 - app.main - INFO - main - log_requests - GET /api/v1/form-submissions/stats - Status: 404 - Time: 0.0008s - IP: 127.0.0.1
+2025-08-24 20:55:38,940 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0040s - IP: 127.0.0.1
+2025-08-24 20:55:38,940 - app.main - INFO - main - log_requests - GET /api/v1/municipality/config - Status: 200 - Time: 0.0034s - IP: 127.0.0.1

@@ -1,0 +1,10 @@
+Test document pentru Primăria Digitală
+
+Acesta este un document de test pentru demonstrarea funcționalităților sistemului de upload și management de fișiere.
+
+🏛️ Primăria Exemplu
+📄 Document oficial de test
+📅 Data: Sun Aug 24 11:40:54 AM EEST 2025
+
+Conține informații importante pentru cetățeni.
+

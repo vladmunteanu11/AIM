@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm start)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(curl:*)",
+      "Bash(npm start -- --port 3001)",
+      "Bash(npm start:*)",
+      "Bash(PORT=3002 npm start)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(uvicorn:*)",
+      "Bash(lsof:*)",
+      "WebSearch",
+      "Bash(psql:*)",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"\\dt\")",
+      "Bash(grep:*)",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"SELECT 1;\")",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"SELECT email, full_name, is_active FROM admin_users;\")",
+      "Bash(node:*)",
+      "Bash(rm:*)",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"\\dt municipality_config\")",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"SELECT id, name, official_name FROM municipality_config;\")",
+      "Bash(export PGPASSWORD=primarie_secure_password_2024)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(npm:*)",
+      "Bash(PORT=3001 cd /home/andrei/Documents/aim/aim/frontend)",
+      "Bash(BROWSER=none PORT=3002 npm start)",
+      "Bash(PGPASSWORD=primarie_secure_password_2024 psql -h localhost -U primarie_user -d primarie_digital -c \"SELECT ''Database connection successful!'' as status;\")",
+      "Bash(tree:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

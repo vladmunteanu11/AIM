@@ -1,0 +1,102 @@
+# Docker Compose pentru Template Primărie Digitală
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: primarie_db
+    environment:
+      POSTGRES_DB: primarie_digital
+      POSTGRES_USER: primarie_user
+      POSTGRES_PASSWORD: primarie_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - primarie_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U primarie_user -d primarie_digital"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Backend FastAPI
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: primarie_backend
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://primarie_user:primarie_password@postgres:5432/primarie_digital
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - SECRET_KEY=your-super-secret-key-change-this-in-production
+      - ALLOWED_HOSTS=localhost,127.0.0.1,your-domain.ro
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/logs:/app/logs
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - primarie_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend React
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: primarie_frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    networks:
+      - primarie_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis pentru caching (opțional)
+  redis:
+    image: redis:7-alpine
+    container_name: primarie_redis
+    command: redis-server --requirepass primarie_redis_password
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - primarie_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  primarie_network:
+    driver: bridge

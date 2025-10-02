@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API</title>
+</head>
+<body>
+    <h1>Test API Direct</h1>
+    <button onclick="testComplaintCreation()">Test Complaint Creation</button>
+    <div id="result"></div>
+
+    <script>
+        async function testComplaintCreation() {
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/complaints', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        category_id: 1,
+                        title: "Test din browser",
+                        description: "Aceasta este o sesizare de test din browser pentru a verifica CORS si functionalitatea",
+                        citizen_name: "Test Browser User",
+                        citizen_email: "browser@example.com",
+                        is_anonymous: false,
+                        urgency_level: "normal",
+                        consent_given: true
+                    })
+                });
+                
+                const data = await response.json();
+                document.getElementById('result').innerHTML = `
+                    <h2>Success!</h2>
+                    <p>Reference: ${data.reference_number}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <h2>Error!</h2>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg width="200" height="80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="80" fill="#004990"/>
+  <text x="100" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">PRIMĂRIA</text>
+  <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">BRAȘOV</text>
+</svg>

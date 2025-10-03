@@ -60,6 +60,8 @@ import {
 import { format, addDays, parseISO, isWeekend } from 'date-fns';
 import { ro } from 'date-fns/locale';
 import axios from 'axios';
+import ModernCalendar from '../../components/ui/ModernCalendar';
+import ModernTimePicker from '../../components/ui/ModernTimePicker';
 
 // Types
 interface AppointmentService {
@@ -533,39 +535,15 @@ const ProgramariOnlinePage: React.FC = () => {
         {/* Step 1: Select Date */}
         {activeStep === 1 && selectedService && (
           <Box>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
               Alege data programării pentru {selectedService.name}
             </Typography>
             
-            <Grid container spacing={2}>
-              {availableDates.map((dateOption) => (
-                <Grid item xs={6} sm={4} md={3} key={dateOption.date}>
-                  <Card 
-                    sx={{ 
-                      cursor: 'pointer',
-                      '&:hover': { boxShadow: 3 }
-                    }}
-                    onClick={() => handleDateSelect(dateOption.date)}
-                  >
-                    <CardContent sx={{ textAlign: 'center', py: 2 }}>
-                      <Typography variant="h6">
-                        {dateOption.display_date}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {dateOption.day_name}
-                      </Typography>
-                      <Box sx={{ mt: 1 }}>
-                        <Chip 
-                          label={`${dateOption.available_slots} sloturi`} 
-                          size="small" 
-                          color="primary"
-                        />
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
+            <ModernCalendar 
+              availableDates={availableDates}
+              selectedDate={selectedDate}
+              onDateSelect={handleDateSelect}
+            />
             
             <Box sx={{ mt: 3 }}>
               <Button 
@@ -582,35 +560,16 @@ const ProgramariOnlinePage: React.FC = () => {
         {/* Step 2: Select Time */}
         {activeStep === 2 && selectedService && selectedDate && (
           <Box>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
               Selectează ora pentru {format(parseISO(selectedDate), 'dd MMMM yyyy', { locale: ro })}
             </Typography>
             
-            <Grid container spacing={2}>
-              {availableSlots.map((slot) => (
-                <Grid item xs={6} sm={4} md={3} key={slot.time}>
-                  <Card 
-                    sx={{ 
-                      cursor: slot.is_available ? 'pointer' : 'not-allowed',
-                      opacity: slot.is_available ? 1 : 0.5,
-                      '&:hover': slot.is_available ? { boxShadow: 3 } : {}
-                    }}
-                    onClick={() => slot.is_available && handleTimeSelect(slot.time)}
-                  >
-                    <CardContent sx={{ textAlign: 'center', py: 2 }}>
-                      <Typography variant="h6">
-                        {slot.display_time}
-                      </Typography>
-                      <Chip 
-                        label={slot.is_available ? 'Disponibil' : 'Ocupat'} 
-                        size="small" 
-                        color={slot.is_available ? 'success' : 'error'}
-                      />
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
+            <ModernTimePicker 
+              timeSlots={availableSlots}
+              selectedTime={selectedTime}
+              onTimeSelect={handleTimeSelect}
+              selectedDate={selectedDate}
+            />
             
             <Box sx={{ mt: 3 }}>
               <Button 

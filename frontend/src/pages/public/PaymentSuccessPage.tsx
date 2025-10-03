@@ -97,9 +97,10 @@ const PaymentSuccessPage: React.FC = () => {
           p: 4, 
           mb: 4, 
           background: 'linear-gradient(135deg, #4caf50 0%, #66bb6a 100%)', 
-          color: 'white',
+          color: '#ffffff',
           textAlign: 'center',
-          borderRadius: 2
+          borderRadius: 2,
+          '& *': { color: '#ffffff !important' }
         }}
       >
         <CheckIcon sx={{ fontSize: 80, mb: 2 }} />

@@ -14,7 +14,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./database_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - primarie_network
     restart: unless-stopped
@@ -32,8 +32,8 @@ services:
     container_name: primarie_backend
     environment:
       - DATABASE_URL=postgresql+asyncpg://primarie_user:primarie_password@postgres:5432/primarie_digital
-      - ENVIRONMENT=production
-      - DEBUG=false
+      - ENVIRONMENT=development
+      - DEBUG=true
       - SECRET_KEY=your-super-secret-key-change-this-in-production
       - ALLOWED_HOSTS=localhost,127.0.0.1,your-domain.ro
     volumes:

@@ -86,8 +86,8 @@ const digiLocalColors = {
     section: '#FAFAFB'
   },
   text: {
-    primary: '#212121',
-    secondary: '#616161',
+    primary: '#212121', // Text întunecat pentru contrast maxim
+    secondary: '#424242', // Text secundar mai deschis dar încă vizibil
     disabled: '#9E9E9E'
   }
 };
@@ -200,7 +200,7 @@ const components = {
     styleOverrides: {
       root: {
         backgroundColor: '#FFFFFF',
-        color: digiLocalColors.primary.main,
+        color: '#212121', // Text întunecat pentru vizibilitate
         boxShadow: '0 2px 20px rgba(0, 73, 144, 0.08)',
         backdropFilter: 'blur(10px)',
         borderBottom: `1px solid ${alpha('#004990', 0.08)}`
@@ -321,18 +321,40 @@ const components = {
   },
   MuiTypography: {
     styleOverrides: {
+      root: {
+        color: '#212121' // Asigură text vizibil
+      },
       h1: {
-        background: 'linear-gradient(45deg, #004990 30%, #0079C1 90%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text'
+        color: '#004990', // Albastru pentru titluri principale
+        fontWeight: 700,
+        letterSpacing: '-0.5px'
       },
       h2: {
+        color: '#004990',
         fontWeight: 700,
         letterSpacing: '-0.5px'
       },
       h3: {
+        color: '#212121',
         fontWeight: 600
+      },
+      h4: {
+        color: '#212121',
+        fontWeight: 600
+      },
+      h5: {
+        color: '#212121',
+        fontWeight: 500
+      },
+      h6: {
+        color: '#212121',
+        fontWeight: 500
+      },
+      body1: {
+        color: '#424242'
+      },
+      body2: {
+        color: '#424242'
       }
     }
   }

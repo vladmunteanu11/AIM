@@ -142,7 +142,13 @@ const VerificarePlatiPage: React.FC = () => {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       {/* Header */}
-      <Paper elevation={2} sx={{ p: 4, mb: 4, background: 'linear-gradient(135deg, #004990 0%, #0079C1 100%)', color: 'white' }}>
+      <Paper elevation={2} sx={{ 
+        p: 4, 
+        mb: 4, 
+        background: 'linear-gradient(135deg, #004990 0%, #0079C1 100%)', 
+        color: '#ffffff',
+        '& *': { color: '#ffffff !important' }
+      }}>
         <Box display="flex" alignItems="center" mb={2}>
           <SearchIcon sx={{ fontSize: 40, mr: 2 }} />
           <Typography variant="h3" component="h1" fontWeight="bold">

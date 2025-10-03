@@ -189,7 +189,8 @@ const HomePage: React.FC = () => {
                   sx={{ 
                     fontSize: { xs: '2.5rem', md: '3.5rem' },
                     fontWeight: 700,
-                    mb: 2
+                    mb: 2,
+                    color: '#ffffff'
                   }}
                 >
                   {municipalityConfig?.name || 'Primăria Digitală'}
@@ -199,8 +200,9 @@ const HomePage: React.FC = () => {
                   variant="h5" 
                   sx={{ 
                     mb: 3,
-                    opacity: 0.9,
-                    fontSize: { xs: '1.2rem', md: '1.5rem' }
+                    opacity: 0.95,
+                    fontSize: { xs: '1.2rem', md: '1.5rem' },
+                    color: '#ffffff'
                   }}
                 >
                   {municipalityConfig?.official_name || 'Servicii publice digitale pentru cetățeni'}
@@ -211,8 +213,9 @@ const HomePage: React.FC = () => {
                   sx={{ 
                     mb: 4, 
                     fontSize: '1.1rem',
-                    opacity: 0.8,
-                    maxWidth: '600px'
+                    opacity: 0.9,
+                    maxWidth: '600px',
+                    color: '#ffffff'
                   }}
                 >
                   Accesați serviciile publice online, consultați actele oficiale și rămâneți 

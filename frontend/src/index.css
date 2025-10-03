@@ -1,13 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;500;600;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #212121;
+  background-color: #F8FAFC;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Asigurăm că toate link-urile au culori vizibile */
+a {
+  color: #004990;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0079C1;
+  text-decoration: underline;
+}
+
+/* Stiluri pentru butoane și elemente interactive */
+button {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+/* Asigurăm contrast bun pentru toate textele */
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: #424242;
+  line-height: 1.6;
 }

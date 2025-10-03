@@ -48,15 +48,18 @@ const navigationItems = [
 
 // Styled components pentru header modern
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#FFFFFF',
-  color: theme.palette.primary.main,
-  boxShadow: '0 4px 20px rgba(0, 73, 144, 0.08)',
+  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+  color: '#FFFFFF',
+  boxShadow: '0 4px 20px rgba(0, 73, 144, 0.3)',
   backdropFilter: 'blur(20px)',
-  borderBottom: `1px solid ${alpha(theme.palette.primary.main, 0.08)}`,
+  borderBottom: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   position: 'sticky',
   top: 0,
-  zIndex: theme.zIndex.appBar
+  zIndex: theme.zIndex.appBar,
+  '& *': {
+    color: '#FFFFFF !important'
+  }
 }));
 
 const LogoContainer = styled(Box)({
@@ -77,6 +80,7 @@ const MunicipalityName = styled(Typography)(({ theme }) => ({
   fontSize: '1.2rem',
   fontWeight: 600,
   lineHeight: 1.2,
+  color: '#FFFFFF !important',
   [theme.breakpoints.down('md')]: {
     fontSize: '1rem'
   }
@@ -85,19 +89,19 @@ const MunicipalityName = styled(Typography)(({ theme }) => ({
 const SearchContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   borderRadius: 12,
-  backgroundColor: alpha(theme.palette.primary.main, 0.04),
-  border: `1px solid ${alpha(theme.palette.primary.main, 0.12)}`,
+  backgroundColor: alpha('#FFFFFF', 0.2),
+  border: `1px solid ${alpha('#FFFFFF', 0.3)}`,
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   '&:hover': {
-    backgroundColor: alpha(theme.palette.primary.main, 0.08),
-    borderColor: alpha(theme.palette.primary.main, 0.2),
+    backgroundColor: alpha('#FFFFFF', 0.3),
+    borderColor: alpha('#FFFFFF', 0.5),
     transform: 'translateY(-1px)',
-    boxShadow: '0 4px 12px rgba(0, 73, 144, 0.15)'
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.2)'
   },
   '&:focus-within': {
-    backgroundColor: alpha(theme.palette.primary.main, 0.08),
-    borderColor: theme.palette.primary.main,
-    boxShadow: `0 0 0 3px ${alpha(theme.palette.primary.main, 0.1)}`
+    backgroundColor: alpha('#FFFFFF', 0.25),
+    borderColor: '#FFFFFF',
+    boxShadow: `0 0 0 3px ${alpha('#FFFFFF', 0.2)}`
   },
   marginLeft: theme.spacing(2),
   width: '100%',
@@ -116,17 +120,23 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  color: '#FFFFFF !important'
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: '#FFFFFF !important',
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%'
-  },
+    width: '100%',
+    color: '#FFFFFF !important',
+    '&::placeholder': {
+      color: alpha('#FFFFFF', 0.8),
+      opacity: 1
+    }
+  }
 }));
 
 const ContactBar = styled(Box)(({ theme }) => ({
@@ -148,7 +158,7 @@ const ContactBar = styled(Box)(({ theme }) => ({
 }));
 
 const NavButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.primary.main,
+  color: '#FFFFFF !important',
   fontWeight: 600,
   fontSize: '0.875rem',
   padding: theme.spacing(1, 2),
@@ -165,14 +175,14 @@ const NavButton = styled(Button)(({ theme }) => ({
     left: 0,
     right: 0,
     bottom: 0,
-    background: `linear-gradient(45deg, ${alpha(theme.palette.primary.main, 0.1)} 0%, ${alpha(theme.palette.secondary.main, 0.1)} 100%)`,
+    background: alpha('#FFFFFF', 0.2),
     opacity: 0,
     transition: 'opacity 0.3s ease'
   },
   '&:hover': {
-    color: theme.palette.primary.dark,
+    color: '#FFFFFF !important',
     transform: 'translateY(-1px)',
-    backgroundColor: alpha(theme.palette.primary.main, 0.04),
+    backgroundColor: alpha('#FFFFFF', 0.15),
     '&::before': {
       opacity: 1
     }
@@ -180,17 +190,20 @@ const NavButton = styled(Button)(({ theme }) => ({
 }));
 
 const ContactButton = styled(Button)(({ theme }) => ({
-  background: `linear-gradient(45deg, ${theme.palette.secondary.main} 30%, ${theme.palette.primary.main} 90%)`,
-  color: theme.palette.common.white,
+  background: alpha('#FFFFFF', 0.2),
+  color: '#FFFFFF !important',
   fontWeight: 600,
   borderRadius: 12,
   padding: theme.spacing(1, 3),
   textTransform: 'none',
-  boxShadow: '0 4px 12px rgba(0, 121, 193, 0.3)',
+  border: `2px solid ${alpha('#FFFFFF', 0.5)}`,
+  boxShadow: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   '&:hover': {
+    background: alpha('#FFFFFF', 0.3),
+    borderColor: '#FFFFFF',
     transform: 'translateY(-2px)',
-    boxShadow: '0 8px 24px rgba(0, 121, 193, 0.4)'
+    boxShadow: '0 8px 24px rgba(255, 255, 255, 0.3)'
   },
   '&:active': {
     transform: 'translateY(0px)'

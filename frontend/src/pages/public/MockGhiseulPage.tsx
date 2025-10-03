@@ -125,8 +125,9 @@ const MockGhiseulPage: React.FC = () => {
           p: 4, 
           mb: 4, 
           background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)', 
-          color: 'white',
-          borderRadius: 2
+          color: '#ffffff',
+          borderRadius: 2,
+          '& *': { color: '#ffffff !important' }
         }}
       >
         <Box display="flex" alignItems="center" mb={2}>

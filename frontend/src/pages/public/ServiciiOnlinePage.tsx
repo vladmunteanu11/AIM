@@ -222,7 +222,13 @@ const ServiciiOnlinePage: React.FC = () => {
   return (
     <Box>
       {/* Header Section */}
-      <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 6 }}>
+      <Box sx={{ 
+        bgcolor: 'primary.main', 
+        color: '#ffffff', 
+        py: 6,
+        background: 'linear-gradient(135deg, #004990 0%, #0079C1 100%)',
+        '& *': { color: '#ffffff !important' }
+      }}>
         <Container maxWidth="lg">
           <Typography variant="h2" gutterBottom fontWeight="bold">
             Servicii Online

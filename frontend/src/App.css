@@ -1,5 +1,7 @@
+/* Resetăm stilurile default */
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background-color: #F8FAFC;
 }
 
 .App-logo {
@@ -13,8 +15,9 @@
   }
 }
 
+/* Header cu contrast corespunzător */
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #004990 0%, #0079C1 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,8 +27,15 @@
   color: white;
 }
 
+/* Link-uri vizibile */
 .App-link {
-  color: #61dafb;
+  color: #0079C1;
+  font-weight: 600;
+}
+
+.App-link:hover {
+  color: #004990;
+  text-decoration: underline;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +45,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Asigurăm că textul din toate componentele este vizibil */
+* {
+  color: inherit;
+}
+
+/* Override pentru a avea text vizibil pe fundal deschis */
+body, .MuiTypography-root {
+  color: #212121;
 }

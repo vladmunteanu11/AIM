@@ -1,5 +1,6 @@
 /**
- * Pagina Servicii Online - Servicii digitale pentru cetățeni
+ * Pagina Servicii Online - Conform modelului Florești Cluj
+ * Implementează servicii digitale pentru cetățeni
  */
 import React, { useState } from 'react';
 import {
@@ -11,7 +12,6 @@ import {
   CardContent,
   CardActions,
   Button,
-  Chip,
   useTheme,
   Alert,
   Tab,
@@ -28,7 +28,7 @@ import {
   LocationOn as LocationIcon
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Styled components
 const ServiceCard = styled(Card)(({ theme }) => ({
@@ -152,6 +152,17 @@ const ServiciiOnlinePage: React.FC = () => {
     }
   ];
 
+  if (loading) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center' }}>
+        <CircularProgress size={60} />
+        <Typography variant="h6" sx={{ mt: 2 }}>
+          Se încarcă serviciile online...
+        </Typography>
+      </Container>
+    );
+  }
+
   return (
     <Box>
       {/* Header Section */}
@@ -167,13 +178,19 @@ const ServiciiOnlinePage: React.FC = () => {
             Servicii Online
           </Typography>
           <Typography variant="h5" sx={{ opacity: 0.9, maxWidth: '700px' }}>
-            Accesați serviciile publice online - plăți, formulare, programări și 
-            alte servicii administrative, totul disponibil 24/7.
+            Accesați serviciile publice online - raportați probleme, verificați statusul sesizărilor și 
+            obțineți informații administrative, totul disponibil 24/7.
           </Typography>
         </Container>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
+        {error && (
+          <Alert severity="error" sx={{ mb: 4 }}>
+            {error}
+          </Alert>
+        )}
+
         {/* Servicii Principale */}
         <Box sx={{ mb: 6 }}>
           <Typography variant="h4" gutterBottom color="primary" fontWeight="bold">
@@ -227,9 +244,9 @@ const ServiciiOnlinePage: React.FC = () => {
 
         {/* Tabs pentru detalii */}
         <Box sx={{ mb: 6 }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleTabChange}
+          <Tabs 
+            value={activeTab} 
+            onChange={handleTabChange} 
             centered
             sx={{ mb: 3 }}
           >

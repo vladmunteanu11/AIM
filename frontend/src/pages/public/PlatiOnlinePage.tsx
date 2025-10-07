@@ -118,61 +118,8 @@ const PlatiOnlinePage: React.FC = () => {
   const loadTaxTypes = async () => {
     try {
       setLoading(true);
-      // Date mock pentru tipurile de taxe (funcționează fără backend)
-      const mockTaxTypes: TaxType[] = [
-        {
-          id: 1,
-          code: 'IMP_CLADIRI',
-          name: 'Impozit pe Clădiri',
-          description: 'Impozit anual pentru clădiri rezidențiale și comerciale',
-          base_amount: 500,
-          is_annual: true,
-          penalty_percentage: 10,
-          ghiseul_enabled: true
-        },
-        {
-          id: 2,
-          code: 'IMP_TEREN',
-          name: 'Impozit pe Teren',
-          description: 'Impozit anual pentru terenuri',
-          base_amount: 300,
-          is_annual: true,
-          penalty_percentage: 10,
-          ghiseul_enabled: true
-        },
-        {
-          id: 3,
-          code: 'TAXA_SALUBRITATE',
-          name: 'Taxă de Salubritate',
-          description: 'Taxă lunară pentru servicii de salubritate',
-          base_amount: 25,
-          is_annual: false,
-          penalty_percentage: 5,
-          ghiseul_enabled: true
-        },
-        {
-          id: 4,
-          code: 'TAXA_AUTORIZATIE_CONSTR',
-          name: 'Taxă Autorizație Construcție',
-          description: 'Taxă pentru obținerea autorizației de construcție',
-          base_amount: 1000,
-          is_annual: false,
-          penalty_percentage: 0,
-          ghiseul_enabled: true
-        },
-        {
-          id: 5,
-          code: 'TAXA_FUNC_COMERCIALA',
-          name: 'Taxă Funcționare Comercială',
-          description: 'Taxă anuală pentru desfășurarea activităților comerciale',
-          base_amount: 800,
-          is_annual: true,
-          penalty_percentage: 15,
-          ghiseul_enabled: true
-        }
-      ];
-      
-      setTaxTypes(mockTaxTypes);
+      const response = await axios.get('http://localhost:8001/api/v1/payments/tax-types');
+      setTaxTypes(response.data);
     } catch (error) {
       setError('Eroare la încărcarea tipurilor de taxe');
     } finally {
@@ -385,16 +332,8 @@ const PlatiOnlinePage: React.FC = () => {
         <Grid container spacing={3}>
           {taxTypes.map((taxType) => (
             <Grid item xs={12} md={6} lg={4} key={taxType.id}>
-              <Card sx={{ 
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                <CardContent sx={{ 
-                  flexGrow: 1,
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
                   <Box display="flex" justifyContent="space-between" alignItems="flex-start" mb={2}>
                     <Typography variant="h6" component="h3">
                       {taxType.name}
@@ -404,7 +343,7 @@ const PlatiOnlinePage: React.FC = () => {
                     )}
                   </Box>
                   
-                  <Typography variant="body2" color="textSecondary" paragraph sx={{ flexGrow: 1 }}>
+                  <Typography variant="body2" color="textSecondary" paragraph>
                     {taxType.description}
                   </Typography>
                   

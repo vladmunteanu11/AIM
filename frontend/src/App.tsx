@@ -16,6 +16,7 @@ import Layout from './components/layout/Layout';
 // Import pages
 import HomePage from './pages/public/HomePage';
 import ServiciiOnlinePage from './pages/public/ServiciiOnlinePage';
+import SesizariPage from './pages/public/SesizariPage';
 import FormularSesizariPage from './pages/public/FormularSesizariPage';
 import CautareSesizarePage from './pages/public/CautareSesizarePage';
 import FormulareOnlinePage from './pages/public/FormulareOnlinePage';
@@ -160,7 +161,7 @@ function App() {
             
             {/* Servicii Publice */}
             <Route path="/servicii-publice" element={<ServiciiOnlinePage />} />
-            <Route path="/servicii-publice/sesizari" element={<ServiciiOnlinePage />} />
+            <Route path="/servicii-publice/sesizari" element={<SesizariPage />} />
             <Route path="/servicii-publice/sesizari/formular" element={<FormularSesizariPage />} />
             <Route path="/servicii-publice/cautare-sesizare" element={<CautareSesizarePage />} />
             <Route path="/servicii-publice/urbanism" element={<PlaceholderPage title="Urbanism și Dezvoltare" />} />

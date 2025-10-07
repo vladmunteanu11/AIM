@@ -42,6 +42,7 @@ const navigationItems = [
   { label: 'Informații Publice', path: '/informatii-interes-public' },
   { label: 'Transparență', path: '/transparenta-decizionala' },
   { label: 'Servicii Online', path: '/servicii-publice' },
+  { label: 'Sesizări', path: '/servicii-publice/sesizari' },
   { label: 'Programări', path: '/programari-online' },
   { label: 'Plăți Online', path: '/plati-online' }
 ];

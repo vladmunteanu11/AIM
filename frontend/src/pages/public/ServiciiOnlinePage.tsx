@@ -1,8 +1,7 @@
 /**
- * Pagina Servicii Online - Conform modelului Florești Cluj
- * Implementează formulare de sesizări și servicii digitale
+ * Pagina Servicii Online - Servicii digitale pentru cetățeni
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -15,14 +14,11 @@ import {
   Chip,
   useTheme,
   Alert,
-  CircularProgress,
   Tab,
   Tabs,
   Divider
 } from '@mui/material';
 import {
-  ReportProblem as ComplaintIcon,
-  Search as SearchIcon,
   Assignment as FormIcon,
   Payment as PaymentIcon,
   Info as InfoIcon,
@@ -32,10 +28,7 @@ import {
   LocationOn as LocationIcon
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import { Link, useNavigate } from 'react-router-dom';
-
-// Import servicii și tipuri
-import { complaintsService, ComplaintCategory } from '../../services/complaintsService';
+import { useNavigate } from 'react-router-dom';
 
 // Styled components
 const ServiceCard = styled(Card)(({ theme }) => ({
@@ -67,15 +60,6 @@ const ServiceIcon = styled(Box)(({ theme }) => ({
   fontSize: '2rem'
 }));
 
-const CategoryCard = styled(Card)(({ theme }) => ({
-  cursor: 'pointer',
-  transition: 'all 0.2s ease',
-  '&:hover': {
-    boxShadow: theme.shadows[6],
-    transform: 'translateY(-2px)'
-  }
-}));
-
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -103,45 +87,13 @@ const ServiciiOnlinePage: React.FC = () => {
   const navigate = useNavigate();
   
   const [activeTab, setActiveTab] = useState(0);
-  const [categories, setCategories] = useState<ComplaintCategory[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    loadComplaintCategories();
-  }, []);
-
-  const loadComplaintCategories = async () => {
-    try {
-      setLoading(true);
-      const data = await complaintsService.getCategories();
-      setCategories(data);
-    } catch (err: any) {
-      setError('Eroare la încărcarea categoriilor de sesizări');
-      console.error('Error loading categories:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
   };
 
-  const handleCategoryClick = (categoryId: number) => {
-    navigate(`/servicii-publice/sesizari/formular?category=${categoryId}`);
-  };
-
   // Servicii principale
   const mainServices = [
-    {
-      title: 'Sesizări și Reclamații',
-      description: 'Raportați probleme din comunitate - drumuri, iluminat, salubritate, etc.',
-      icon: <ComplaintIcon className="service-icon" />,
-      color: theme.palette.error.main,
-      link: '/servicii-publice/sesizari',
-      isActive: true
-    },
     {
       title: 'Plăți Online',
       description: 'Plătește taxe și impozite locale prin Ghișeul.ro - rapid și sigur',
@@ -150,14 +102,6 @@ const ServiciiOnlinePage: React.FC = () => {
       link: '/plati-online',
       isActive: true,
       featured: true
-    },
-    {
-      title: 'Căutare Sesizare',
-      description: 'Verificați statusul unei sesizări existente folosind numărul de referință',
-      icon: <SearchIcon className="service-icon" />,
-      color: theme.palette.info.main,
-      link: '/servicii-publice/cautare-sesizare',
-      isActive: true
     },
     {
       title: 'Formulare Administrative',
@@ -193,7 +137,7 @@ const ServiciiOnlinePage: React.FC = () => {
       items: [
         'Telefon: 0256 123 456',
         'Email: contact@primarie.ro',
-        'Email sesizări: sesizari@primarie.ro'
+        'WhatsApp: +40 256 123 456'
       ],
       icon: <PhoneIcon />
     },
@@ -207,17 +151,6 @@ const ServiciiOnlinePage: React.FC = () => {
       icon: <LocationIcon />
     }
   ];
-
-  if (loading) {
-    return (
-      <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center' }}>
-        <CircularProgress size={60} />
-        <Typography variant="h6" sx={{ mt: 2 }}>
-          Se încarcă serviciile online...
-        </Typography>
-      </Container>
-    );
-  }
 
   return (
     <Box>
@@ -234,19 +167,13 @@ const ServiciiOnlinePage: React.FC = () => {
             Servicii Online
           </Typography>
           <Typography variant="h5" sx={{ opacity: 0.9, maxWidth: '700px' }}>
-            Accesați serviciile publice online - raportați probleme, verificați statusul sesizărilor și 
-            obțineți informații administrative, totul disponibil 24/7.
+            Accesați serviciile publice online - plăți, formulare, programări și 
+            alte servicii administrative, totul disponibil 24/7.
           </Typography>
         </Container>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
-        {error && (
-          <Alert severity="error" sx={{ mb: 4 }}>
-            {error}
-          </Alert>
-        )}
-
         {/* Servicii Principale */}
         <Box sx={{ mb: 6 }}>
           <Typography variant="h4" gutterBottom color="primary" fontWeight="bold">
@@ -300,67 +227,18 @@ const ServiciiOnlinePage: React.FC = () => {
 
         {/* Tabs pentru detalii */}
         <Box sx={{ mb: 6 }}>
-          <Tabs 
-            value={activeTab} 
-            onChange={handleTabChange} 
+          <Tabs
+            value={activeTab}
+            onChange={handleTabChange}
             centered
             sx={{ mb: 3 }}
           >
-            <Tab label="Categorii Sesizări" />
             <Tab label="Informații Utile" />
             <Tab label="Ghid Utilizare" />
           </Tabs>
 
-          {/* Tab 0 - Categorii Sesizări */}
+          {/* Tab 0 - Informații Utile */}
           <TabPanel value={activeTab} index={0}>
-            <Typography variant="h5" gutterBottom color="primary" fontWeight="bold">
-              Categorii de Sesizări Disponibile
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-              Selectați categoria care corespunde cel mai bine problemei pe care doriți să o raportați
-            </Typography>
-
-            <Grid container spacing={3}>
-              {categories.map((category) => (
-                <Grid item xs={12} sm={6} md={4} key={category.id}>
-                  <CategoryCard onClick={() => handleCategoryClick(category.id)}>
-                    <CardContent>
-                      <Typography variant="h6" gutterBottom color="primary">
-                        {category.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                        {category.description}
-                      </Typography>
-                      
-                      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                        <Chip 
-                          label={`Răspuns: ${category.response_time_hours}h`}
-                          size="small"
-                          color="info"
-                          variant="outlined"
-                        />
-                        <Chip 
-                          label={`Rezolvare: ${category.resolution_time_days} zile`}
-                          size="small"
-                          color="success"
-                          variant="outlined"
-                        />
-                      </Box>
-
-                      {category.responsible_department && (
-                        <Typography variant="caption" display="block" sx={{ mt: 1 }}>
-                          Responsabil: {category.responsible_department}
-                        </Typography>
-                      )}
-                    </CardContent>
-                  </CategoryCard>
-                </Grid>
-              ))}
-            </Grid>
-          </TabPanel>
-
-          {/* Tab 1 - Informații Utile */}
-          <TabPanel value={activeTab} index={1}>
             <Typography variant="h5" gutterBottom color="primary" fontWeight="bold">
               Informații Utile
             </Typography>
@@ -391,8 +269,8 @@ const ServiciiOnlinePage: React.FC = () => {
             </Grid>
           </TabPanel>
 
-          {/* Tab 2 - Ghid Utilizare */}
-          <TabPanel value={activeTab} index={2}>
+          {/* Tab 1 - Ghid Utilizare */}
+          <TabPanel value={activeTab} index={1}>
             <Typography variant="h5" gutterBottom color="primary" fontWeight="bold">
               Cum să Folosiți Serviciile Online
             </Typography>
@@ -402,15 +280,15 @@ const ServiciiOnlinePage: React.FC = () => {
                 <Card>
                   <CardContent>
                     <Typography variant="h6" gutterBottom color="secondary">
-                      Pentru Sesizări Noi
+                      Pentru Plăți Online
                     </Typography>
                     <Box component="ol" sx={{ pl: 2 }}>
-                      <li>Selectați categoria potrivită pentru problema dvs.</li>
-                      <li>Completați formularul cu detalii clare și precise</li>
-                      <li>Adăugați fotografii dacă este necesar</li>
-                      <li>Indicați locația exactă a problemei</li>
-                      <li>Acceptați termenii de prelucrare a datelor</li>
-                      <li>Primiți numărul de referință pentru urmărire</li>
+                      <li>Selectați "Plăți Online" din meniu</li>
+                      <li>Alegeți tipul de taxă sau impozit</li>
+                      <li>Completați datele necesare</li>
+                      <li>Verificați suma de plată</li>
+                      <li>Finalizați plata prin Ghișeul.ro</li>
+                      <li>Păstrați dovada de plată electronică</li>
                     </Box>
                   </CardContent>
                 </Card>
@@ -420,14 +298,15 @@ const ServiciiOnlinePage: React.FC = () => {
                 <Card>
                   <CardContent>
                     <Typography variant="h6" gutterBottom color="secondary">
-                      Pentru Urmărirea Sesizărilor
+                      Pentru Formulare și Programări
                     </Typography>
                     <Box component="ol" sx={{ pl: 2 }}>
-                      <li>Accesați "Căutare Sesizare" din meniu</li>
-                      <li>Introduceți numărul de referință primit</li>
-                      <li>Vizualizați statusul actual al sesizării</li>
-                      <li>Citiți actualizările de la administrație</li>
-                      <li>Adăugați feedback dacă sesizarea a fost rezolvată</li>
+                      <li>Accesați serviciul dorit din meniu</li>
+                      <li>Completați formularul online</li>
+                      <li>Atașați documentele necesare</li>
+                      <li>Programați-vă dacă este necesar</li>
+                      <li>Primiți confirmare prin email</li>
+                      <li>Urmăriți statusul cererii dvs.</li>
                     </Box>
                   </CardContent>
                 </Card>
@@ -436,8 +315,8 @@ const ServiciiOnlinePage: React.FC = () => {
 
             <Alert severity="info" sx={{ mt: 4 }}>
               <Typography variant="body2">
-                <strong>Important:</strong> Pentru situații de urgență (accidente, pericole iminente), 
-                vă rugăm să contactați direct serviciile de urgență la 112 sau primăria la 0256 123 456.
+                <strong>Important:</strong> Pentru informații suplimentare sau asistență, 
+                vă rugăm să contactați primăria la 0256 123 456 sau la contact@primarie.ro.
               </Typography>
             </Alert>
           </TabPanel>

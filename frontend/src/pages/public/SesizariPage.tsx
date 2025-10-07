@@ -51,7 +51,7 @@ const SesizariPage: React.FC = () => {
     description: 'Raportați probleme din comunitate - drumuri, iluminat, salubritate, spații verzi, etc.',
     icon: <ComplaintIcon className="service-icon" />,
     color: theme.palette.error.main,
-    link: '/servicii-publice/sesizari',
+    link: '/servicii-publice/sesizari/formular',
     isActive: true
   };
 

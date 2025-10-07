@@ -8,7 +8,8 @@ from .endpoints import (
     content,
     documents,
     forms,
-    search
+    search,
+    payments
 )
 
 # Router principal pentru API v1
@@ -21,5 +22,6 @@ api_router.include_router(content.router, prefix="/content", tags=["Content Mana
 api_router.include_router(documents.router, prefix="/documents", tags=["Documents"])
 api_router.include_router(forms.router, prefix="/forms", tags=["Forms"])
 api_router.include_router(search.router, prefix="", tags=["Search"])
+api_router.include_router(payments.router, prefix="/payments", tags=["Payments"])
 
 __all__ = ["api_router"]

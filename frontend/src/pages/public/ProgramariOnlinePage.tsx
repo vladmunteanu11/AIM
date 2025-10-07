@@ -463,12 +463,14 @@ const ProgramariOnlinePage: React.FC = () => {
                   <Card 
                     sx={{ 
                       height: '100%', 
+                      display: 'flex',
+                      flexDirection: 'column',
                       cursor: 'pointer',
                       '&:hover': { boxShadow: 4 }
                     }}
                     onClick={() => handleServiceSelect(service)}
                   >
-                    <CardContent>
+                    <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                       <Typography variant="h6" gutterBottom>
                         {service.name}
                       </Typography>
@@ -494,26 +496,28 @@ const ProgramariOnlinePage: React.FC = () => {
                         />
                       </Box>
 
-                      {service.requires_documents && (
-                        <Box>
-                          <Typography variant="caption" color="primary" fontWeight="bold">
-                            Documente necesare:
-                          </Typography>
-                          <List dense>
-                            {service.required_documents.map((doc, index) => (
-                              <ListItem key={index} sx={{ py: 0, pl: 2 }}>
-                                <ListItemIcon sx={{ minWidth: 20 }}>
-                                  <Assignment fontSize="small" />
-                                </ListItemIcon>
-                                <ListItemText 
-                                  primary={doc} 
-                                  primaryTypographyProps={{ variant: 'caption' }}
-                                />
-                              </ListItem>
-                            ))}
-                          </List>
-                        </Box>
-                      )}
+                      <Box sx={{ flexGrow: 1 }}>
+                        {service.requires_documents && (
+                          <Box>
+                            <Typography variant="caption" color="primary" fontWeight="bold">
+                              Documente necesare:
+                            </Typography>
+                            <List dense>
+                              {service.required_documents.map((doc, index) => (
+                                <ListItem key={index} sx={{ py: 0, pl: 2 }}>
+                                  <ListItemIcon sx={{ minWidth: 20 }}>
+                                    <Assignment fontSize="small" />
+                                  </ListItemIcon>
+                                  <ListItemText 
+                                    primary={doc} 
+                                    primaryTypographyProps={{ variant: 'caption' }}
+                                  />
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                      </Box>
                     </CardContent>
                     
                     <CardActions>

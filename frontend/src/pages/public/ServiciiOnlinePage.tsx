@@ -16,7 +16,8 @@ import {
   Alert,
   Tab,
   Tabs,
-  Divider
+  Divider,
+  CircularProgress
 } from '@mui/material';
 import {
   Assignment as FormIcon,
@@ -87,6 +88,8 @@ const ServiciiOnlinePage: React.FC = () => {
   const navigate = useNavigate();
   
   const [activeTab, setActiveTab] = useState(0);
+  const [loading] = useState(false);
+  const [error] = useState<string | null>(null);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
@@ -206,19 +209,26 @@ const ServiciiOnlinePage: React.FC = () => {
                 <ServiceCard 
                   onClick={() => navigate(service.link)}
                 >
-                  <CardContent sx={{ textAlign: 'center', flexGrow: 1 }}>
-                    <ServiceIcon sx={{ bgcolor: service.color }}>
-                      {service.icon}
-                    </ServiceIcon>
-                    
-                    <Typography variant="h6" gutterBottom fontWeight="bold">
-                      {service.title}
-                    </Typography>
-                    
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                      {service.description}
-                    </Typography>
-
+                  <CardContent sx={{ 
+                    textAlign: 'center', 
+                    flexGrow: 1, 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}>
+                    <Box>
+                      <ServiceIcon sx={{ bgcolor: service.color }}>
+                        {service.icon}
+                      </ServiceIcon>
+                      
+                      <Typography variant="h6" gutterBottom fontWeight="bold">
+                        {service.title}
+                      </Typography>
+                      
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        {service.description}
+                      </Typography>
+                    </Box>
                   </CardContent>
                   
                   <CardActions sx={{ justifyContent: 'center', pb: 2 }}>
